@@ -40,9 +40,9 @@ public class Arboles {
             System.out.println("Arbol espejo: ");
             System.out.println("Preorden: ");
             arbol.Preorden2(arbol.nodoRaiz);
-            System.out.println("PosOrden");
+            System.out.println("\nPosOrden");
             arbol.PosOrden2(arbol.nodoRaiz);
-            System.out.println("In-orden");
+            System.out.println("\nIn-orden");
             arbol.inOrden2(arbol.nodoRaiz);
             break;
             default:System.out.println("No existe esa opcion, por favor intente de nuevo");
