@@ -44,7 +44,37 @@ public class Procesos {
         }    
      }
     } 
-    
+    public void insertarespejo(Nodo nodoActual){
+     if(nodoPadre2==null){
+         nodoPadre2=nodoActual;
+         nodoRaiz2=nodoActual;
+         cantidad++;  
+     }
+     else{
+         if(nodoActual.elemento<nodoPadre2.elemento){
+             if(nodoPadre2.izquierdo==null){
+                 nodoPadre2.izquierdo=nodoActual;
+                 nodoPadre2=nodoRaiz2;
+                  cantidad++;  
+         }
+             else{
+                 nodoPadre2=nodoPadre2.izquierdo;
+                 insertar(nodoActual);
+             }
+         }
+            else{
+             if(nodoPadre2.derecho==null){
+              nodoPadre2.derecho=nodoActual;
+              nodoPadre2=nodoRaiz2;
+              cantidad++;  
+             }
+             else{
+              nodoPadre2=nodoPadre2.derecho;
+              insertar(nodoActual);
+             }     
+        }    
+     }
+    } 
     
 //Preorden
 public void Preorden(Nodo nodoRaiz2){
@@ -71,8 +101,8 @@ public void Preorden2(Nodo nodoRaiz2){
      }
   else{
     System.out.print(nodoRaiz2.elemento+", ");
-    Preorden(nodoRaiz2.derecho);
-    Preorden(nodoRaiz2.izquierdo);
+    Preorden2(nodoRaiz2.derecho);
+    Preorden2(nodoRaiz2.izquierdo);
 }
 }
 }
@@ -94,9 +124,10 @@ public void inOrden2(Nodo nodoRaiz2){
 if(nodoRaiz2==null){
 }
 else{
-    inOrden(nodoRaiz2.derecho);
-    System.out.print(nodoRaiz2.elemento+", ");
-    inOrden(nodoRaiz2.izquierdo);
+    inOrden2(nodoRaiz2.derecho);
+     System.out.print(nodoRaiz2.elemento+", ");
+    inOrden2(nodoRaiz2.izquierdo);
+
 }
 }
 
@@ -115,9 +146,10 @@ public void PosOrden2(Nodo nodoRaiz2){
 if(nodoRaiz2==null){
 }
 else{
-    PosOrden(nodoRaiz2.derecho);
-    PosOrden(nodoRaiz2.izquierdo);
+    PosOrden2(nodoRaiz2.derecho);
+    PosOrden2(nodoRaiz2.izquierdo);
     System.out.print(nodoRaiz2.elemento+", ");
+    
 }
 }
 
